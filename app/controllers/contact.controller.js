@@ -52,7 +52,7 @@ exports.findAll = async (req, res, next) => {
 
     try {
         const contactService = new ContactService(MongoDB.client);
-        const { name } = re.query;
+        const { name } = req.query;
         if (name) {
             documents = await contactService.findByName(name);
         } else {
